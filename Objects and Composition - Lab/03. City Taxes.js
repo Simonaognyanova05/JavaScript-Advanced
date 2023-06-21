@@ -1,15 +1,23 @@
-function solve(input) {
-    let object = {};
-    for (let el of input) {
-        el = el.split(' <-> ');
-        if (object.hasOwnProperty(el[0])) {
-            object[el[0]] += Number(el[1]);
-        } else {
-            object[el[0]] = Number(el[1]);
+function cityTaxes(name, population, treasury){
+    let object = {
+        name,
+        population,
+        treasury,
+        taxRate: 10,
+        collectTaxes: function(){
+            return this.treasury += this.population * this.taxRate;
+        },
+        applyGrowth: function(percentage){
+            return this.population += (percentage/100) * this.population;
+        },
+        applyRecession: function(percentage){
+            return this.treasury -= (percentage/100) * this.treasury;
         }
-    }
-    for (let key of Object.keys(object)) {
-        console.log(`${key} : ${object[key]}`);
-    }
+    };
+    return object;
 }
-solve();
+const city = 
+ cityTaxes('Tortuga',
+ 7000,
+ 15000);
+console.log(city);
