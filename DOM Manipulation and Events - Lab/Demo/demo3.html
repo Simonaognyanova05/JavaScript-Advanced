@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Counter</h1>
+
+    <div id="number">0</div>
+    <button id="minus">+</button>
+    <button id="clear">Clear</button>
+
+
+    <script>
+        let numberElement = document.getElementById('number');
+        let num = Number(numberElement.textContent);
+        let decrementEvent = document.getElementById('minus');
+        let clearEvent = document.getElementById('clear');
+
+        
+        decrementEvent.addEventListener('click', () => {
+            numberElement.textContent = num + 1;
+        })
+
+        clearEvent.addEventListener('click', () => {
+            numberElement.textContent = 0;
+        })
+
+    </script>
+</body>
+</html>
