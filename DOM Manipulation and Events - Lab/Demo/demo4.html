@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Test</h1>
+    <div id="text">
+        <input type="text" id="some-text">
+        <button id="some-button" disabled>Send</button>
+    </div>
+
+    <script>
+        let inputElement = document.getElementById('some-text');
+        let buttonElement = document.getElementById('some-button');
+
+        inputElement.addEventListener('input', () =>{
+            if(inputElement.value.length > 0){
+                buttonElement.removeAttribute('disabled');
+            }else{
+                buttonElement.setAttribute('disabled', true);
+            }
+        })
+            
+    </script>
+</body>
+
+</html>
