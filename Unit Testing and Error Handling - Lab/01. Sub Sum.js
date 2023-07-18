@@ -11,4 +11,16 @@ function solve(arr, param1, param2) {
     
     return sum;
 }
-console.log(solve([10, 'twenty', 30, 40], 0, 2));
+
+//Unit test
+function test(){
+    let acturalSum = solve([10, 20, 30, 40, 50, 60], 3, 300);
+    let sum = 150;
+
+    if(acturalSum == sum){
+        console.log('yes');
+    }else{
+        console.log('no');
+    }
+}
+test();
