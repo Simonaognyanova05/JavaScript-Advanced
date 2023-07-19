@@ -4,6 +4,7 @@ let mathEnforcer = {
             return undefined;
         }
         return num + 5;
+        
     },
     subtractTen: function (num) {
         if (typeof (num) !== 'number') {
