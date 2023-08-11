@@ -12,7 +12,10 @@ function gameLoop(state, game, timestamp){
     if(state.keys.Space){
         game.wizardElement.style.backgroundImage = 'url("./images/wizard-fire.png")';
 
-        game.createFireball(wizard, state.fireball);
+        if(timestamp > state.fireball.nextSpawnTimestamp){
+            game.createFireball(wizard, state.fireball);
+            state.fireball.nextSpawnTimestamp = timestamp + state.fireball.fireRate;
+        }
     }else{
         game.wizardElement.style.backgroundImage = 'url("./images/wizard.png")';
     }
@@ -58,8 +61,6 @@ function gameLoop(state, game, timestamp){
     wizardElement.style.left = wizard.posX + 'px';
     wizardElement.style.top = wizard.posY + 'px';
     
-
-
     window.requestAnimationFrame(gameLoop.bind(null, state, game));
 
 }
