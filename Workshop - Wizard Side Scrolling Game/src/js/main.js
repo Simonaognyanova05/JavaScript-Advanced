@@ -4,7 +4,8 @@ const availableKeys = [
     'KeyA',
     'KeyS',
     'KeyW',
-    'KeyD'
+    'KeyD',
+    'Space',
 ];
 document.addEventListener('keydown', (e)=>{
     if(availableKeys.includes(e.code)){

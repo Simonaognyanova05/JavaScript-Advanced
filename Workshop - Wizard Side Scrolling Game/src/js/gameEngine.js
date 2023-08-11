@@ -9,6 +9,12 @@ function gameLoop(state, game, timestamp){
     const { wizardElement } = game;
     modifyWizardPositions(state, game);
 
+    if(state.keys.Space){
+        game.wizardElement.style.backgroundImage = 'url("./images/wizard-fire.png")';
+    }else{
+        game.wizardElement.style.backgroundImage = 'url("./images/wizard.png")';
+    }
+
     //Spawn bug
     if(timestamp > state.bugStats.nextSpawnTimestamp){
         game.createBug(state.bugStats);
